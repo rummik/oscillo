@@ -52,13 +52,13 @@
 		leftAnalyser.getByteTimeDomainData(left);
 		rightAnalyser.getByteTimeDomainData(right);
 
-		ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		for (var i=1; i<1024; i++) {
+		for (var i=0; i<1024; i++) {
 			ctx.globalCompositeOperation = 'lighter';
 			ctx.drawImage(point,
-				(256 - left[i-1]) / 256 * size,
-				right[i-1] / 256 * size
+				(256 - left[i]) / 256 * size,
+				right[i] / 256 * size
 			);
 		}
 
