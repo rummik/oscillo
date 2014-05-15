@@ -44,9 +44,6 @@
 	})();
 
 	(function animate() {
-		ctx.fillStyle =
-		ctx.strokeStyle = '#2f8';
-
 		leftAnalyser.getByteTimeDomainData(left);
 		rightAnalyser.getByteTimeDomainData(right);
 
