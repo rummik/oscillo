@@ -1,12 +1,10 @@
 (function(AudioContext, requestAnimationFrame) {
-	var audio = new Audio();
+	var audio = document.querySelector('audio');
 	var context = new AudioContext();
 	var source = context.createMediaElementSource(audio);
 	var splitter = context.createChannelSplitter(2);
 	var leftAnalyser = context.createAnalyser();
 	var rightAnalyser = context.createAnalyser();
-
-	audio.src = 'oscillofun.mp3';
 
 	source.connect(context.destination);
 	source.connect(splitter);
