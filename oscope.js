@@ -1,5 +1,14 @@
 (function(AudioContext, requestAnimationFrame) {
-	var audio = document.querySelector('audio');
+	var audio;
+	var file = (location.search.match(/[?&]file=([^?&]+)/) || ['']).pop();
+
+	if (file) {
+		audio = new Audio();
+		audio.src = file;
+	} else {
+		audio = document.querySelector('audio');
+	}
+
 	var context = new AudioContext();
 	var source = context.createMediaElementSource(audio);
 	var splitter = context.createChannelSplitter(2);
